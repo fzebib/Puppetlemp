@@ -16,6 +16,10 @@ package { 'mysql':
 	ensure => installed,
 }
 
+package { 'mysql-server':
+	require => Exec['yum update'],
+	ensure => installed,
+}
 #install Php5-FPM package
 
 package { 'php-fpm':
